@@ -6,7 +6,7 @@ const watch = require("gulp-watch");
 const Path=require("path");
 const del=require('del');
 const webserver=require("gulp-webserver");
-const webserverConfig=require('./config/webserverConfig');
+const {webserverConfig,webpackConfig}=require('./config');
 
 
 
