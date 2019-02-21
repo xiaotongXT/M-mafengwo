@@ -1,0 +1,117 @@
+#app-main{
+    width: 100%;
+}
+.app-main-tit{
+    background-color: #f8f8f8;
+    text-align: center;
+}
+.app-main-tit h3{
+    display: inline-block;
+    font-size: .4rem;
+    color: #999;
+    font-weight: normal;
+    line-height: .933rem;
+    position: relative;
+}
+.app-main-tit h3::after,.app-main-tit h3::before{
+    content: '';
+    display: inline-block;
+    width: .213rem;
+    height: .293rem;
+    background: url(/static/images/i_guidet.png) no-repeat;
+    background-size: .266rem;
+    vertical-align: middle;
+}
+.app-main-tit h3::after{
+    background-position: 0 -0.333rem;
+    margin: 0 0 .03rem .453rem;
+}
+.app-main-tit h3::before{
+    background-position: 0 0;
+    margin: 0 .453rem .026rem 0;
+}
+.app-main-content a{
+    display: block;
+}
+.content-title{
+    box-sizing: content-box;
+    padding: .3rem 1.5rem 0 .4rem;
+    max-height: 1.3rem;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.content-title h1{
+    font-size: .506rem;
+    color: #111;
+    font-weight: normal;
+}
+.content-title-tag{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: .4rem;
+    line-height: 1rem;
+}
+.content-title-tag img{
+    height: .56rem;
+    width: auto;
+}
+.content-box{
+    padding: .24rem .4rem .4rem;
+    display: flex;
+}
+.content-img img{
+    width: 3.466rem;
+    height: 2.4rem;
+}
+.content-txt{
+    box-sizing: content-box;
+    margin-left: .266667rem;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: .133333rem;
+    flex-grow: 1;
+}
+.content-txt .txt{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em;
+    font-size: .373rem;
+    padding: .14rem 0 0;
+    word-break: break-all;
+}
+.content-box .message{
+    height: .533rem;
+    font-size: .32rem;
+    line-height: .533rem;
+    display: flex;
+    justify-content: space-between;
+}
+.content-box .message img{
+    width: .533rem;
+    height: .533rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0 0 .04rem .133rem;
+}
+.backtop{
+    // display: block;
+    display: none;
+    position: fixed;
+    width: 1.066rem;
+    height: 1.066rem;
+    right: .4rem;
+    bottom: 2rem;
+    background: url(/static/images/backtop.png) no-repeat;
+    background-size: 1.066rem;
+    z-index: 89;
+}

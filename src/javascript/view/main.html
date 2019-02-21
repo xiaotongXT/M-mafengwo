@@ -1,0 +1,26 @@
+{{#each films}}
+<a href="##">
+    <div class="content-title">
+        <h1>{{data.title}}</h1>
+        <i class="content-title-tag">
+            <img src="https://n1-q.mafengwo.net/s9/M00/FB/0C/wKgBs1diFRKAMMptAAAIpExA3RM367.png" alt="">
+        </i>
+    </div>
+    <div class="content-box">
+        <div class="content-img">
+            <img src="{{data.image}}" alt="">
+        </div>
+        <div class="content-txt">
+            <div class="txt">{{data.content}}</div>
+            <div class="message">
+                <span class="num">{{data_source.pv}}浏览</span>
+                <div>
+                    <i>{{data_source.user.name}}</i>
+                    <img src="https://n3-q.mafengwo.net/s11/M00/6B/AC/wKgBEFpDJDKAP6keAABRMNmmQGE14.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+{{/each}}

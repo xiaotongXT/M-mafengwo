@@ -1,0 +1,83 @@
+#app-nav{
+    width: 100%;
+    padding: .2rem 0 .8rem;
+}
+$width:2.4;
+$height:2.4;
+.app-nav-list{
+    // display: flex;
+    list-style: none;
+    padding: 0 .2rem;
+    li{
+        float: left;
+        width: $width+rem;
+        height:$height+rem;
+        a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 1rem;
+            font-size: .426rem;
+        }
+        i{
+            display: inline-block;
+            width: 1.22rem;
+            height: 1.22rem;
+            background: url('/../static/images/i_nav3.png') no-repeat;
+            background-size:5rem; 
+        }
+    }
+}
+.app-nav-item .i1{
+    color: #ff9d00;
+}
+.app-nav-item .i1 i{
+    background-position: 0 0;
+}
+.app-nav-item .i2{
+    color: #feca2b;
+}
+.app-nav-item .i2 i{
+    background-position: 0 -1.24rem;
+}
+.app-nav-item .i3{
+    color: #42d6ba;
+}
+.app-nav-item .i3 i{
+    background-position: -2.48rem -1.24rem;
+}
+.app-nav-item .i4{
+    color: #f94a87;
+}
+.app-nav-item .i4 i{
+    background-position: -1.24rem -1.24rem;
+}
+.app-nav-item .i5{
+    color: #32a2f1;
+}
+.app-nav-item .i5 i{
+    background-position: -1.24rem 0;
+}
+.app-nav-item .i6{
+    color: #fd4e4e;
+}
+.app-nav-item .i6 i{
+    background-position: -2.48rem 0;
+}
+.app-nav-item .i7{
+    color: #acce0e;
+}
+.app-nav-item .i7 i{
+    background-position: -3.72rem 0
+}
+.app-nav-item .i8{
+    color: #b160df;
+}
+.app-nav-item .i8 i{
+    background-position: -3.72rem -1.24rem;
+}
+

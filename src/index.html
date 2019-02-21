@@ -7,28 +7,69 @@
     <title>马蜂窝</title>
     <script src="/static/javascript/flexible.js"></script>
     <link rel="stylesheet" href="/stylesheet/index.css">
+    <link rel="stylesheet" href="/static/stylesheet/swiper.min.css">
 </head>
 <body>
     <div id="app">
+        <!-- 头部 -->
         <header id="app-head">
+            <!--logo -->
             <div class="app-head-logo">
                 <a href="###" class="head-logo-link"></a>
             </div>
+            <!-- 搜索 -->
             <div class="app-head-search">
                 <form action="">
                     <input type="text" class="search-txt" placeholder="搜索目的地/旅游/攻略" disabled>
                     <i class="search-magnifying"></i>
                 </form>
             </div>
+            <!-- 登陆 -->
             <div class="app-head-login">
                 <a href="###" class="login-btn">登录</a>
             </div>
         </header>
-        <div id="app-banner"></div>
-        <nav id="app-nav"></nav>
-        <main id="app-main"></main>
+        <!-- 轮播图 -->
+        <div id="app-banner">
+           <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/static/images/banner.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="/static/images/banner2.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="/static/images/banner3.jpeg" alt=""></div>
+                </div>
+                <div class="swiper-pagination">
+                    
+                </div>
+           </div>
+        </div>
+        <!-- 导航 -->
+        <nav id="app-nav">
+            <ul class="app-nav-list clear">
+                <li class="app-nav-item"><a href="###" class="i1"><i></i>找攻略</a></li>
+                <li class="app-nav-item"><a href="###" class="i2"><i></i>看游记</a></li>
+                <li class="app-nav-item"><a href="###" class="i3"><i></i>问达人</a></li>
+                <li class="app-nav-item"><a href="###" class="i4"><i></i>结伴</a></li>
+                <li class="app-nav-item"><a href="###" class="i5"><i></i>酒店</a></li>
+                <li class="app-nav-item"><a href="###" class="i6"><i></i>旅行商城</a></li>
+                <li class="app-nav-item"><a href="###" class="i7"><i></i>机票</a></li>
+                <li class="app-nav-item"><a href="###" class="i8"><i></i>当地玩乐</a></li>
+            </ul>
+        </nav>
+        <!-- 内容 -->
+        <main id="app-main">
+                <div class="app-main-tit">
+                        <h3>推荐攻略</h3>
+                    </div>
+                    <div class="app-main-content">
+                        
+                    </div>
+        </main>
+        <footer id="foot">加载更多</footer>
+        <a href="javascript:;" class="backtop"></a>
     </div>
     <script src="/static/javascript/zepto.min.js"></script>
-    <script src="/static/javascripts/handlebars.js"></script>
+    <script src="/static/javascript/handlebars.js"></script>
+    <script src="/static/javascript/swiper.min.js"></script>
+    <script src="/javascript/index.js"></script>
 </body>
 </html>

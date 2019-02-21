@@ -6,6 +6,7 @@ const watch = require("gulp-watch");
 const Path=require("path");
 const del=require('del');
 const webserver=require("gulp-webserver");
+const webpack=require('webpack-stream')
 const {webserverConfig,webpackConfig}=require('./config');
 
 
@@ -38,10 +39,18 @@ gulp.task("webserver",()=>{
 })
 
 
+//处理js文件
+gulp.task('pack-js',()=>{
+    return gulp.src('./src/javascript/**/*.js')
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest('./dist/javascript'))
+})
+
 //监听文件变化
 gulp.task('watch',()=>{
     gulp.watch('./src/*.html',['copy-html']);
     gulp.watch('./src/stylesheet/**/*.scss',['compile-sass']);
+    gulp.watch('./src/javascript/**/*',['pack-js'])
     watch('./src/static/**/*',(v)=>{
         if(v.event==='unlink'){
             let _path = Path.resolve('./dist/static/', v.path.split('\\static\\')[1]);
@@ -52,4 +61,4 @@ gulp.task('watch',()=>{
     })
 })
 
-gulp.task('default',['copy-static','copy-html','compile-sass','watch','webserver']);
+gulp.task('default',['copy-static','copy-html','compile-sass','pack-js','watch','webserver']);
