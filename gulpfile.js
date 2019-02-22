@@ -25,6 +25,12 @@ gulp.task("copy-static",()=>{
     .pipe(gulp.dest('dist/static'))
 });
 
+//拷贝html文件夹
+gulp.task("html-file",()=>{
+    return gulp.src('./src/html/**/*')
+    .pipe(gulp.dest('dist/html'))
+});
+
 //处理sass文件
 gulp.task('compile-sass',()=>{
     return gulp.src('./src/stylesheet/**/*.scss')
@@ -59,6 +65,14 @@ gulp.task('watch',()=>{
             gulp.start(['copy-static'])
         }
     })
+    watch('./src/html/**/*',(v)=>{
+        if(v.event==='unlink'){
+            let _path = Path.resolve('./dist/html/', v.path.split('\\html\\')[1]);
+            del(_path);
+        }else{
+            gulp.start(['html-file'])
+        }
+    })
 })
 
-gulp.task('default',['copy-static','copy-html','compile-sass','pack-js','watch','webserver']);
+gulp.task('default',['copy-static','html-file','copy-html','compile-sass','pack-js','watch','webserver']);

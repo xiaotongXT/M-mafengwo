@@ -93,18 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const api={\r\n\trequest ({url, data, methods}) {\r\n        return $.ajax(\r\n\t\t\t{\r\n\t\t\t\turl:url,\r\n\t\t\t\tmethods:\"get\",\r\n\t\t\t\tdata:{},\r\n\t\t\t\tsuccess:(res)=>{\r\n\t\t\t\t\treturn(JSON.parse(res));\r\n\t\t\t\t\t\r\n\t\t\t\t},\r\n\t\t\t\terror:(err)=>{\r\n\t\t\t\t\treturn('请求出错');\r\n\t\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t)\r\n    },\r\n}\r\n\r\nmodule.exports=api;\n\n//# sourceURL=webpack:///./src/javascript/api/api.js?");
-
-/***/ }),
-
-/***/ "./src/javascript/api/scroll.js":
-/*!**************************************!*\
-  !*** ./src/javascript/api/scroll.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const scrolldata=__webpack_require__(/*! ../control/app-index-control */ \"./src/javascript/control/app-index-control.js\");\r\n\r\n\r\nclass Scroll{\r\n    constructor(){\r\n        this.index=0;\r\n        this.backtop=document.querySelector('.backtop');\r\n        this.clientHeight=document.documentElement.clientHeight;\r\n    }\r\n    init(){\r\n        document.self=this;\r\n        document.addEventListener('scroll',this.scrollHandler);\r\n        this.backtop.addEventListener('click',this.clickHandler);\r\n    }\r\n    scrollHandler(e){\r\n        if(document.documentElement.scrollTop>800){\r\n            this.self.backtop.style.display='block';\r\n        }else{\r\n            this.self.backtop.style.display='none';\r\n        }\r\n        if(document.body.clientHeight-document.documentElement.scrollTop<this.self.clientHeight){\r\n            this.self.index++;\r\n            if(this.self.index>1){\r\n                this.self.index=0;\r\n                return;\r\n            }\r\n            scrolldata.rander();\r\n        }\r\n    }\r\n    clickHandler(e){\r\n        document.documentElement.scrollTop=0;\r\n    }\r\n}\r\nmodule.exports=Scroll\n\n//# sourceURL=webpack:///./src/javascript/api/scroll.js?");
+eval("const api={\r\n\trequest ({url, data, methods}) {\r\n        return $.ajax(\r\n\t\t\t{\r\n\t\t\t\turl:url,\r\n\t\t\t\tmethods:\"get\",\r\n\t\t\t\tdata:{},\r\n\t\t\t\tsuccess:(res)=>{\r\n\t\t\t\t\treturn res;\r\n\t\t\t\t\t\r\n\t\t\t\t},\r\n\t\t\t\terror:(err)=>{\r\n\t\t\t\t\treturn('请求出错');\r\n\t\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t)\r\n\t\t},\r\n}\r\n\r\nmodule.exports=api;\n\n//# sourceURL=webpack:///./src/javascript/api/api.js?");
 
 /***/ }),
 
@@ -115,7 +104,7 @@ eval("const scrolldata=__webpack_require__(/*! ../control/app-index-control */ \
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const api=__webpack_require__(/*! ../api/api.js */ \"./src/javascript/api/api.js\")\r\n\r\n\r\nconst ToobtainData=()=>{///hahaha?category=get_info_flow_list&page=1\r\n    return api.request({url:'/hahaha?category=get_info_flow_list&page=1'})\r\n}\r\n\r\n\r\nmodule.exports= ToobtainData;\r\n\n\n//# sourceURL=webpack:///./src/javascript/control/add-data.js?");
+eval("const api=__webpack_require__(/*! ../api/api.js */ \"./src/javascript/api/api.js\")\r\n\r\n\r\nconst ToobtainData=()=>{\r\n    return api.request({url:'/hahaha?category=get_info_flow_list&page=1'})\r\n}\r\nconst bannerimg=()=>{\r\n    return api.request({url:' http://localhost:5001/bannerimg'})\r\n}\r\n\r\n\r\nmodule.exports= {\r\n    ToobtainData,bannerimg\r\n}\r\n\n\n//# sourceURL=webpack:///./src/javascript/control/add-data.js?");
 
 /***/ }),
 
@@ -126,7 +115,7 @@ eval("const api=__webpack_require__(/*! ../api/api.js */ \"./src/javascript/api/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const indexControl=__webpack_require__(/*! ./app-index-control */ \"./src/javascript/control/app-index-control.js\");\r\n\r\nconst rander=()=>{\r\n    indexControl.rander();\r\n    \r\n}\r\n\r\nmodule.exports={rander}\n\n//# sourceURL=webpack:///./src/javascript/control/app-control.js?");
+eval("const indexControl=__webpack_require__(/*! ./app-index-control */ \"./src/javascript/control/app-index-control.js\");\r\nconst searchPage=__webpack_require__(/*! ../module/searchpage */ \"./src/javascript/module/searchpage.js\");\r\n\r\nconst rander=()=>{\r\n    indexControl.rander();\r\n    indexControl.banner();\r\n    searchPage.rander();\r\n}\r\n\r\nmodule.exports={rander}\n\n//# sourceURL=webpack:///./src/javascript/control/app-control.js?");
 
 /***/ }),
 
@@ -137,7 +126,7 @@ eval("const indexControl=__webpack_require__(/*! ./app-index-control */ \"./src/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const data=__webpack_require__(/*! ./add-data */ \"./src/javascript/control/add-data.js\");\r\nconst appMain=__webpack_require__(/*! ../view/main.html */ \"./src/javascript/view/main.html\")\r\n\r\nconst rander=async()=>{\r\n\tlet list=await data();\r\n\tlet newlist=JSON.parse(list).data.list;\r\n\tlet template = Handlebars.compile(appMain);\r\n\t$('#app .app-main-content').append(template({ films: newlist }));\r\n\t$('#app .app-main-content').children().eq(0).find('.content-title img').attr('src','https://n1-q.mafengwo.net/s9/M00/FB/0C/wKgBs1diFRKAMMptAAAIpExA3RM367.png')\r\n\r\n\tconsole.log(newlist);\r\n}\r\n\r\n\r\nmodule.exports={rander}\n\n//# sourceURL=webpack:///./src/javascript/control/app-index-control.js?");
+eval("const data=__webpack_require__(/*! ./add-data */ \"./src/javascript/control/add-data.js\");\r\nconst appMain=__webpack_require__(/*! ../view/main.html */ \"./src/javascript/view/main.html\");\r\nconst bannerhtml=__webpack_require__(/*! ../view/banner.html */ \"./src/javascript/view/banner.html\");\r\n\r\n//加载数据列表\r\nconst rander=async()=>{\r\n\tlet list=await data.ToobtainData();\r\n\tlet newlist=JSON.parse(list).data.list;\r\n\tlet maintemplate = Handlebars.compile(appMain);\r\n\t$('#app .app-main-content').append(maintemplate({ films: newlist }));\r\n\t$('#app .app-main-content').children().eq(0).find('.content-title img').attr('src','https://n1-q.mafengwo.net/s9/M00/FB/0C/wKgBs1diFRKAMMptAAAIpExA3RM367.png');\r\n\r\n}\r\n\r\n//加载轮播图\r\nconst banner=async()=>{\r\n\tlet bannerimg=await data.bannerimg();\r\n\tlet bannertemplate = Handlebars.compile(bannerhtml);\r\n\t$('#app-banner .swiper-wrapper').append(bannertemplate({ banner: bannerimg.bannerimg }));\r\n\t//轮播图\r\n\tvar mySwiper = new Swiper('.swiper-container', {\r\n\tautoplay: 5000,//可选选项，自动滑动\r\n\tloop:true,//循环模式\r\n\tpagination: {\r\n\t\tel: '.swiper-pagination',\r\n\t}\r\n})\r\n}\r\n\r\n\r\nmodule.exports={rander,banner}\n\n//# sourceURL=webpack:///./src/javascript/control/app-index-control.js?");
 
 /***/ }),
 
@@ -148,7 +137,40 @@ eval("const data=__webpack_require__(/*! ./add-data */ \"./src/javascript/contro
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const allContrall=__webpack_require__(/*! ./control/app-control */ \"./src/javascript/control/app-control.js\");\r\nconst Scroll=__webpack_require__(/*! ./api/scroll */ \"./src/javascript/api/scroll.js\")\r\n\r\n//轮播图\r\nvar mySwiper = new Swiper('.swiper-container', {\r\n\tautoplay: 5000,//可选选项，自动滑动\r\n\tloop:true,//循环模式\r\n\tpagination: {\r\n\t\tel: '.swiper-pagination',\r\n\t}\r\n})\r\nallContrall.rander();\r\n\r\nlet scroll=new Scroll();\r\nscroll.init()\n\n//# sourceURL=webpack:///./src/javascript/index.js?");
+eval("const allContrall=__webpack_require__(/*! ./control/app-control */ \"./src/javascript/control/app-control.js\");\r\nconst Scroll=__webpack_require__(/*! ./module/scroll */ \"./src/javascript/module/scroll.js\")\r\n\r\n\r\nallContrall.rander();\r\n\r\nlet scroll=new Scroll();\r\nscroll.init();\r\nwindow.addEventListener('hashchange',()=>{\r\n\tconsole.log(location.hash);\r\n\t\r\n})\n\n//# sourceURL=webpack:///./src/javascript/index.js?");
+
+/***/ }),
+
+/***/ "./src/javascript/module/scroll.js":
+/*!*****************************************!*\
+  !*** ./src/javascript/module/scroll.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const scrolldata=__webpack_require__(/*! ../control/app-index-control */ \"./src/javascript/control/app-index-control.js\");\r\n\r\n\r\nclass Scroll{\r\n    constructor(){\r\n        this.index=0;\r\n        this.backtop=document.querySelector('.backtop');\r\n        this.clientHeight=document.documentElement.clientHeight;\r\n    }\r\n    init(){\r\n        document.self=this;\r\n        document.addEventListener('scroll',this.scrollHandler);\r\n        this.backtop.addEventListener('click',this.clickHandler);\r\n    }\r\n    scrollHandler(e){\r\n        if(document.documentElement.scrollTop>800){\r\n            this.self.backtop.style.display='block';\r\n        }else{\r\n            this.self.backtop.style.display='none';\r\n        }\r\n        if(document.body.clientHeight-document.documentElement.scrollTop<this.self.clientHeight){\r\n            this.self.index++;\r\n            if(this.self.index>1){\r\n                this.self.index=0;\r\n                return;\r\n            }\r\n            scrolldata.rander();\r\n        }\r\n    }\r\n    clickHandler(e){   \r\n        Scroll.animations();\r\n    }\r\n    static animations(){\r\n        if(document.documentElement.scrollTop<10){\r\n            document.documentElement.scrollTop=0;\r\n            return;\r\n        }\r\n        if(document.documentElement.scrollTop>1000){\r\n            window.scrollBy(0,800-document.documentElement.scrollTop);\r\n        }\r\n        requestAnimationFrame(Scroll.animations);\r\n       window.scrollBy(0,-40);\r\n    }\r\n}\r\nmodule.exports=Scroll\n\n//# sourceURL=webpack:///./src/javascript/module/scroll.js?");
+
+/***/ }),
+
+/***/ "./src/javascript/module/searchpage.js":
+/*!*********************************************!*\
+  !*** ./src/javascript/module/searchpage.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const rander = () => {\r\n    $('.app-head-search').on('touchstart', () => {\r\n        $('#search-page').show();\r\n        $('html').css('overflow','hidden')\r\n        // $('#search-page').bind(\"touchmove\", function (e) {\r\n        //     e.preventDefault();\r\n        // });\r\n    })\r\n    $('.cancle-btn').click(() => {\r\n        $('#search-page').hide();\r\n        $('html').css('overflow','auto')\r\n    })\r\n}\r\n\r\nmodule.exports = {\r\n    rander\r\n};\n\n//# sourceURL=webpack:///./src/javascript/module/searchpage.js?");
+
+/***/ }),
+
+/***/ "./src/javascript/view/banner.html":
+/*!*****************************************!*\
+  !*** ./src/javascript/view/banner.html ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"{{#each banner}}<div class=\\\"swiper-slide\\\"><img src=\\\"{{img}}\\\" alt=\\\"\\\"></div>{{/each}}\"\n\n//# sourceURL=webpack:///./src/javascript/view/banner.html?");
 
 /***/ }),
 

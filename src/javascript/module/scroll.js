@@ -27,8 +27,19 @@ class Scroll{
             scrolldata.rander();
         }
     }
-    clickHandler(e){
-        document.documentElement.scrollTop=0;
+    clickHandler(e){   
+        Scroll.animations();
+    }
+    static animations(){
+        if(document.documentElement.scrollTop<10){
+            document.documentElement.scrollTop=0;
+            return;
+        }
+        if(document.documentElement.scrollTop>1000){
+            window.scrollBy(0,800-document.documentElement.scrollTop);
+        }
+        requestAnimationFrame(Scroll.animations);
+       window.scrollBy(0,-40);
     }
 }
 module.exports=Scroll

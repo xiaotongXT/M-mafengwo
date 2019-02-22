@@ -6,7 +6,7 @@ const api={
 				methods:"get",
 				data:{},
 				success:(res)=>{
-					return(JSON.parse(res));
+					return res;
 					
 				},
 				error:(err)=>{
@@ -15,7 +15,7 @@ const api={
 				}
 			}
 		)
-    },
+		},
 }
 
 module.exports=api;

@@ -7,3 +7,27 @@
 #app-banner img{
     width: 100%;
 }
+
+
+#app-banner .swiper-pagination{
+    background: #fff;
+    opacity: .5;
+    width: 100px;
+    height: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+#app-banner .swiper-pagination-bullet{
+    background: #fff;
+    height: 5px;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 0;
+}
+#app-banner .swiper-pagination-bullet-active{
+    background: #ffa630;
+}
