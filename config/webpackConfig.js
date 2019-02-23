@@ -3,7 +3,8 @@ const pathUtil=require('path');
 const webpackConfig = {
     mode: 'development',//配置打包模式
     entry: {//入口
-        index: pathUtil.join(__dirname, '../src/javascript/index.js')
+        index: pathUtil.join(__dirname, '../src/javascript/index.js'),
+        login: pathUtil.join(__dirname, '../src/javascript/module/login.js')
     },
     output: {//出口
         filename: '[name].js'
