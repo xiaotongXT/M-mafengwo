@@ -1,3 +1,3 @@
-const router=require('../router/index');
+const loginControl=require('../router/index');
 
-new router();
+new loginControl.Router();

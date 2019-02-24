@@ -1,6 +1,6 @@
 const router=require('./router');
 
-
+//router
 class Router{
     constructor(initial){
         this.router=router;
@@ -9,6 +9,14 @@ class Router{
     }
     init(){
         this.hashChange();
+        this.refreshHandler();
+    }
+    refreshHandler(){
+        let url=(location.hash.slice(1));
+        if(url){
+            Router.addActive(url);
+            this.router[url]();
+        }
     }
     hashChange(){
         window.addEventListener('hashchange',()=>{
@@ -29,4 +37,8 @@ class Router{
     }
 }
 
-module.exports=Router;
+
+
+module.exports={
+    Router,
+}

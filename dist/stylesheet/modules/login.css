@@ -368,6 +368,9 @@ input::-webkit-input-placeholder {
 
 .signup-btn button a {
   color: #ffba33;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 .signup-btn .login-btn {
@@ -420,11 +423,12 @@ input::-webkit-input-placeholder {
   align-items: center;
   color: #666;
   font-size: 14px;
+  height: 100%;
 }
 
 .weibo a i, .qq a i {
   width: 40px;
-  height: 38px;
+  height: 30px;
   margin-bottom: 3px;
   display: inline-block;
   background: url(../../static/images/connect_ico.png) no-repeat;
@@ -432,9 +436,24 @@ input::-webkit-input-placeholder {
 }
 
 .weibo a i {
-  background-position: 5px 10px;
+  background-position: 5px 1px;
 }
 
 .qq a i {
-  background-position: -43px 10px;
+  background-position: -43px 0px;
+}
+
+.hint-meaasge {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 18px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  display: none;
 }

@@ -11,47 +11,52 @@
 </head>
 
 <body>
-    <section id="signup">
-        <a href="../index.html" class="signup-logo"></a>
-        <div class="signup-tab">
-            <ul>
-                <li class="signup-tab-item active"><a href="#id-login" class="id-login">普通登陆</a></li>
-                <li class="signup-tab-item"><a href="#tel-login" class="tel-login">短信验证码登陆</a></li>
-            </ul>
-        </div>
-        <form action="">
-            <div class="signup-txt">
-                <input type="text" class="user-name" placeholder="您的邮箱/手机号">
-                <input type="password" class="user-psd" placeholder="您的密码">
+    <header class="logo"><a href="../index.html" class="signup-logo"></a></header>
+    <main id="main">
+        <section id="signup">
+            <div class="signup-tab">
+                <ul>
+                    <li class="signup-tab-item active"><a href="#id-login" class="id-login">普通登陆</a></li>
+                    <li class="signup-tab-item"><a href="#tel-login" class="tel-login">短信验证码登陆</a></li>
+                </ul>
             </div>
-            <div class="forget-psd"><a href="##">忘记密码？</a></div>
-            <div class="signup-btn">
-                <button class="login-btn">登陆</button>
-                <button><a href="#reg-tel" class="speediness">快速注册</a></button>
+            <div class="input-box">
+                <form action="">
+                    <div class="signup-txt">
+                        <input type="text" class="user-name" placeholder="您的邮箱/手机号">
+                        <input type="password" class="user-psd" placeholder="您的密码">
+                    </div>
+                    <div class="forget-psd"><a href="##">忘记密码？</a></div>
+                    <div class="signup-btn">
+                        <button class="login-btn">登陆</button>
+                        <button><a href="#reg-tel" class="speediness">快速注册</a></button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </section>
-    <section id="else-account">
-        <div class="account-tit">
-            <span>使用第三方账号登陆</span>
-        </div>
-        <div class="account-content">
-            <div class="weibo">
-                <a href="http://passport.mafengwo.cn/weibo">
-                    <i></i>
-                    微博登陆
-                </a>
+        </section>
+        <section id="else-account">
+            <div class="account-tit">
+                <span>使用第三方账号登陆</span>
             </div>
-            <div class="qq">
-                <a href="http://passport.mafengwo.cn/qq">
-                    <i></i>
-                    QQ登陆
-                </a>
+            <div class="account-content">
+                <div class="weibo">
+                    <a href="http://passport.mafengwo.cn/weibo">
+                        <i></i>
+                        微博登陆
+                    </a>
+                </div>
+                <div class="qq">
+                    <a href="http://passport.mafengwo.cn/qq">
+                        <i></i>
+                        QQ登陆
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
 <script src="../static/javascript/zepto.min.js"></script>
 <script src="../static/javascript/handlebars.js"></script>
 <script src="../javascript/login.js"></script>
+
 </html>
