@@ -1,6 +1,6 @@
 const regtelhtml=require('../view/reg-tel.html');
-const fillinmessage=require('../../javascript/view/fillin-message.html');
-const fillinempty=require('../view/fillin-empty.html');
+var fillinmessage=require('../view/fillin-message.html');
+var fillinempty=require('../view/fillin-empty.html');
 var username;
 var userpsd;
 var verifycode;
@@ -24,9 +24,10 @@ function clickHandler(e){
         $('.hint-meaasge').html('账号不合法，请重新输入。');
         $('.hint-meaasge').show();
         $('.reg-tel').get(0).value='';
-    }else
+    }
     if(reg.test(tel)&&tel.length===11){
-        let html = Handlebars.compile(fillinmessage)
+        let template = Handlebars.compile(fillinmessage);
+        let html=template();
         $('#main').html(html);
         verification();
     }
@@ -43,14 +44,12 @@ function verification(){
 function btnClick(e){
     if(username.value.trim().length===0||userpsd.value.trim().lengt===0||verifycode.value.trim().length===0){
         let html = Handlebars.compile(fillinempty)
-        $('#main').html(html);
+        $('#main').html(html());
         $('.hint-meaasge').show();
         init();
     }
      
 }
-
-
 
 module.exports={
     rander

@@ -1,14 +1,15 @@
 const rander = () => {
     $('.app-head-search').on('touchstart', () => {
         $('#search-page').show();
-        $('html').css('overflow','hidden')
-        // $('#search-page').bind("touchmove", function (e) {
-        //     e.preventDefault();
-        // });
+        $('#app-main').hide();
     })
+    // $('.cancle-btn').on('touchstart', () => {
+    //     $('#search-page').hide();
+    //     $('#app-main').show();
+    // })
     $('.cancle-btn').click(() => {
         $('#search-page').hide();
-        $('html').css('overflow','auto')
+        $('#app-main').show();
     })
 }
 

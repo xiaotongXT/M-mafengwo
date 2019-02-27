@@ -5,38 +5,42 @@ class Scroll{
     constructor(){
         this.index=0;
         this.backtop=document.querySelector('.backtop');
+        this.page=1;
         this.clientHeight=document.documentElement.clientHeight;
     }
     init(){
         document.self=this;
-        document.addEventListener('scroll',this.scrollHandler);
+        document.addEventListener('touchmove',this.scrollHandler);
         this.backtop.addEventListener('click',this.clickHandler);
     }
     scrollHandler(e){
-        if(document.documentElement.scrollTop>800){
+        let scrolltop= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        if(scrolltop>1000){
             this.self.backtop.style.display='block';
         }else{
             this.self.backtop.style.display='none';
         }
-        if(document.body.clientHeight-document.documentElement.scrollTop<this.self.clientHeight){
+        if(document.body.clientHeight-scrolltop<window.innerHeight+100){
             this.self.index++;
-            if(this.self.index>1){
+            if(this.self.index>1){ 
                 this.self.index=0;
                 return;
             }
-            scrolldata.rander();
+            this.self.page++
+            scrolldata.rander('/hahaha?category=get_info_flow_list&page='+this.self.page);
         }
     }
     clickHandler(e){   
         Scroll.animations();
     }
     static animations(){
-        if(document.documentElement.scrollTop<10){
-            document.documentElement.scrollTop=0;
+        let st=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        if(st<10){
+            st=0;
             return;
         }
-        if(document.documentElement.scrollTop>1000){
-            window.scrollBy(0,800-document.documentElement.scrollTop);
+        if(st>1000){
+            window.scrollBy(0,800-st);
         }
         requestAnimationFrame(Scroll.animations);
        window.scrollBy(0,-40);

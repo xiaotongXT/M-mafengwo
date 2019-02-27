@@ -3,8 +3,8 @@ const appMain=require('../view/main.html');
 const bannerhtml=require('../view/banner.html');
 
 //加载数据列表
-const rander=async()=>{
-	let list=await data.ToobtainData();
+const rander=async(url)=>{
+	let list=await data.ToobtainData(url);
 	let newlist=JSON.parse(list).data.list;
 	let maintemplate = Handlebars.compile(appMain);
 	$('#app .app-main-content').append(maintemplate({ films: newlist }));
@@ -19,11 +19,11 @@ const banner=async()=>{
 	$('#app-banner .swiper-wrapper').append(bannertemplate({ banner: bannerimg.bannerimg }));
 	//轮播图
 	var mySwiper = new Swiper('.swiper-container', {
-	autoplay: 5000,//可选选项，自动滑动
-	loop:true,//循环模式
-	pagination: {
-		el: '.swiper-pagination',
-	}
+		autoplay: 5000,//可选选项，自动滑动
+		loop:true,//循环模式
+		pagination: {
+			el: '.swiper-pagination',
+		}
 })
 }
 

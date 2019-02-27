@@ -236,6 +236,11 @@ i {
 
 html {
   height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
 }
 
 #app-head {
@@ -432,6 +437,10 @@ html {
   background-position: -3.72rem -1.24rem;
 }
 
+#app {
+  width: 100%;
+}
+
 #app-main {
   width: 100%;
 }
@@ -470,13 +479,18 @@ html {
   margin: 0 .453rem .026rem 0;
 }
 
+.app-main-content {
+  width: 100%;
+}
+
 .app-main-content a {
   display: block;
+  width: 100%;
 }
 
 .content-title {
   box-sizing: content-box;
-  padding: .3rem 1.5rem 0 .4rem;
+  padding: .3rem 1.5rem 3px .4rem;
   max-height: 1.3rem;
   position: relative;
   display: -webkit-box;
@@ -506,8 +520,12 @@ html {
 }
 
 .content-box {
+  width: 100%;
   padding: .24rem .4rem .4rem;
-  display: flex;
+}
+
+.content-img {
+  float: left;
 }
 
 .content-img img {
@@ -517,13 +535,13 @@ html {
 
 .content-txt {
   box-sizing: content-box;
-  margin-left: .266667rem;
+  height: 2.4rem;
+  margin-left: 3.8rem;
   color: #999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: .133333rem;
-  flex-grow: 1;
 }
 
 .content-txt .txt {
@@ -536,6 +554,7 @@ html {
   font-size: .373rem;
   padding: .14rem 0 0;
   word-break: break-all;
+  word-wrap: break-word;
 }
 
 .content-box .message {
@@ -566,15 +585,46 @@ html {
   z-index: 89;
 }
 
+.request-more {
+  font-size: .373rem;
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}
+
 #foot {
-  width: 100%;
-  height: 2.666667rem;
+  background-color: #2a282c;
+  padding-bottom: 17px;
+}
+
+#foot p {
+  color: #575658;
+  text-align: center;
+  font-size: .1rem;
+  line-height: .533333rem;
+}
+
+.foot-nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000;
-  color: #fff;
-  font-size: 20px;
+  justify-content: space-around;
+  width: 100%;
+  padding: .533333rem 0;
+}
+
+.foot-nav a {
+  display: inline-block;
+  width: 71px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background-color: #403e42;
+  border-radius: 4px;
+  color: #929193;
+  font-size: 10px;
+}
+
+.foot-nav .add-me {
+  color: #ff9d00;
 }
 
 #search-page {
